@@ -1,0 +1,14 @@
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div *ngIf="showImage" class="col-md-4">
+        <img src="{{ imageSource }}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div [ngClass]="{'col-md-12' : !showImage, 'col-md-8' : showImage }">
+        <div class="card-body">
+          <h5 class="card-title"> {{ cardTitle }} </h5>
+          <p class="card-text"> {{ cardBody }} </p>
+          <a routerLink="{{ navigateTo }}" class="btn btn-primary"> {{ buttonText }} </a>
+        </div>
+      </div>
+    </div>
+  </div>

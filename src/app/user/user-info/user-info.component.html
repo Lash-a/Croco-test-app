@@ -1,0 +1,36 @@
+<div *ngIf="(vm$ | async) as user">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 justify-content-center bg-light">
+                <img src="../../../assets/user-profile.png" style="width: 150px;" alt="">
+                <div style="display: inline-block;">
+                    <span style="font-size: 18px"><b><em>{{user.name}}</em></b></span>
+                    <br>
+                    <span style="font-size: 12px;"><em>@{{user.username}}</em></span>
+               </div>
+               <div style="margin-left: 150px;">
+                <p>Email:  {{user.email}}</p>
+                <p>Phone: {{user.phone}} </p>
+                <p>Location:  {{user.address.city}}, {{user.address.street}} </p>
+                <p>website: 
+                    <a style="text-decoration: none;" href="http://{{user.website}}" target="_blank"> 
+                        {{user.website}}
+                     </a> 
+                </p>
+                <p>company: {{user.company.name}} </p>
+            
+                <button 
+                    class="btn btn-primary"
+                    style="margin-bottom: 20px;"
+                    (click)="showUserPosts(user.id)"
+                    >{{user.name}}'s posts
+                </button>
+            </div>
+            </div>
+           
+            </div>
+    </div>
+    
+</div>
